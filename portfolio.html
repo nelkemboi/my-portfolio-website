@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 flex justify-between items-center p-6 bg-gray-800">
+        <div class="flex items-center space-x-3">
+            <img src="my pic.jpeg" alt="My Profile" class="w-10 h-10 rounded-full">
+            <span class="text-2xl font-bold">MyBio</span>
+        </div>
+        
+        <!-- Mobile responsive Navbar -->
+        <div class="hidden md:flex items-center space-x-4 ml-auto">
+            <nav class="space-x-4">
+                <a href="#" class="text-gray-300 hover:text-white" onclick="showHome()">Home</a>
+                <a href="#" class="text-gray-300 hover:text-white" onclick="loadSection('about')">About</a>
+                <a href="#" class="text-gray-300 hover:text-white" onclick="loadSection('publications')">Publications</a>
+                <a href="#" class="text-gray-300 hover:text-white" onclick="loadSection('projects')">Projects</a>
+                <a href="#" class="text-gray-300 hover:text-white" onclick="loadSection('contact')">Contacts</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Content Wrapper (contains Hero and Skills sections) -->
+    <div id="home-content">
+        <!-- Hero Section -->
+        <section class="flex flex-col md:flex-row items-center justify-between mt-10 px-6 max-w-6xl mx-auto">
+            <!-- Left Column (Text and Social Links) -->
+            <div class="md:w-1/2 text-left space-y-4">
+                <h2 class="text-lg text-gray-400">WELCOME TO MY WORLD</h2>
+                <h1 class="text-4xl md:text-5xl font-bold">
+                    Hi, I'm <span class="text-pink-500">Nelson Kibet Kibet</span><br>
+                    a <span class="text-blue-500">Data Scientist & Web Designer</span>.
+                </h1>
+                <p class="text-gray-400 max-w-lg">
+                    Bringing data to life through purposeful animation, enhancing usability and guiding each interaction seamlessly.
+                </p>
+                
+                <!-- Social Links -->
+                <div class="flex space-x-6">
+                    <a href="https://www.facebook.com/yourprofile" target="_blank" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/yourprofile" target="_blank" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nelson-kibet-7b2150155/" target="_blank" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://x.com/kibetkemboi89" target="_blank" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Right Column (Profile Image) -->
+            <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center md:justify-end relative">
+                <!-- Profile Image with Hover Effect -->
+                <img src="my pic.jpeg" alt="Profile Photo" class="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 object-cover rounded-full shadow-2xl border-4 border-gray-900 transform hover:scale-110 hover:shadow-5x2 transition-transform duration-300 ease-in-out">
+            </div>
+        </section>
+    
+        <!-- Skills Section -->
+        <section class="mt-20 px-6 text-center">
+            <h2 class="text-2xl font-semibold text-white mb-4">Best Skills On</h2>
+            <div class="flex flex-wrap justify-center space-x-8">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-28 md:w-40 lg:w-48 mb-4">
+                    <i class="fas fa-code text-4xl text-white mb-2"></i>
+                    <p class="text-gray-300">Coding</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-28 md:w-40 lg:w-48 mb-4">
+                    <i class="fas fa-chart-line text-4xl text-white mb-2"></i>
+                    <p class="text-gray-300">Data Analysis</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-28 md:w-40 lg:w-48 mb-4">
+                    <i class="fas fa-paint-brush text-4xl text-white mb-2"></i>
+                    <p class="text-gray-300">Design</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Placeholder for Dynamically Loaded Content -->
+    <div id="dynamic-content" class="p-6 max-w-4xl mx-auto hidden"></div>
+
+    <!-- Footer info --> 
+    <footer class="bg-gray-800 text-gray-400 text-center py-4 mt-20">
+        &copy; <span id="year"></span> Nelson Kibet Kibet. All rights reserved.
+    </footer>
+  
+    <script src="scripts.js"></script>
+</body>
+</html>
