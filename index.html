@@ -10,25 +10,40 @@
 <body class="bg-gray-900 text-white font-sans">
     
     <!-- Navbar -->
-    <header class="sticky top-0 z-50 flex justify-between items-center p-6 bg-gray-800">
-        <div class="flex items-center space-x-3">
-            <img src="my pic.jpeg" alt="My Profile" class="w-10 h-10 rounded-full">
-            <span class="text-2xl font-bold">MyBio</span>
-        </div>
-        
-        <!-- Mobile responsive Navbar -->
-        <div class="hidden md:flex items-center space-x-4 ml-auto">
-            <nav class="space-x-4">
+    <header class="sticky top-0 z-50 p-6 bg-gray-800">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <img src="my pic.jpeg" alt="My Profile" class="w-10 h-10 rounded-full">
+                <span class="text-2xl font-bold">MyBio</span>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Desktop Navbar Links -->
+            <nav id="menu" class="hidden md:flex space-x-4 ml-auto">
                 <a href="#" class="text-gray-300 hover:text-white" onclick="showHome()">Home</a>
                 <a href="#" class="text-gray-300 hover:text-white" onclick="loadSection('about')">About</a>
                 <a href="#" class="text-gray-300 hover:text-white" onclick="loadSection('publications')">Publications</a>
                 <a href="#" class="text-gray-300 hover:text-white" onclick="loadSection('projects')">Projects</a>
-                <a href="#" class="text-gray-300 hover:text-white" onclick="loadSection('contact')">Contacts</a>
+                <a href="#" class="text-gray-300 hover:text-white" onclick="loadSection('contact')">Contact</a>
             </nav>
         </div>
+
+        <!-- Mobile Navbar Links (Hidden initially, toggled by JavaScript) -->
+        <nav id="mobile-menu" class="hidden flex-col md:hidden space-y-4 mt-4">
+            <a href="#" class="text-gray-300 hover:text-white block" onclick="showHome()">Home</a>
+            <a href="#" class="text-gray-300 hover:text-white block" onclick="loadSection('about')">About</a>
+            <a href="#" class="text-gray-300 hover:text-white block" onclick="loadSection('publications')">Publications</a>
+            <a href="#" class="text-gray-300 hover:text-white block" onclick="loadSection('projects')">Projects</a>
+            <a href="#" class="text-gray-300 hover:text-white block" onclick="loadSection('contact')">Contact</a>
+        </nav>
     </header>
 
-    <!-- Home Content Wrapper (contains Hero and Skills sections) -->
+    <!-- Home Content Wrapper (default view) -->
     <div id="home-content">
         <!-- Hero Section -->
         <section class="flex flex-col md:flex-row items-center justify-between mt-10 px-6 max-w-6xl mx-auto">
@@ -95,6 +110,7 @@
         &copy; <span id="year"></span> Nelson Kibet Kibet. All rights reserved.
     </footer>
   
+    <!-- Link to external JavaScript file -->
     <script src="scripts.js"></script>
 </body>
 </html>

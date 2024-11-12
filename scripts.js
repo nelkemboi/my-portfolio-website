@@ -1,18 +1,16 @@
-// Function to show the Home section
+// Show Home Section
 function showHome() {
   document.getElementById("home-content").classList.remove("hidden");
   document.getElementById("dynamic-content").classList.add("hidden");
 }
 
-// Function to load a specific section from navItems.html
+// Load Specific Section from navItems.html
 function loadSection(sectionId) {
   fetch("navItems.html")
-    .then((response) => {
-      if (!response.ok) throw new Error("Failed to load content");
-      return response.text();
-    })
+    .then((response) =>
+      response.ok ? response.text() : Promise.reject("Failed to load content")
+    )
     .then((data) => {
-      // Parse the HTML and extract the requested section
       const parser = new DOMParser();
       const htmlDoc = parser.parseFromString(data, "text/html");
       const section = htmlDoc.getElementById(sectionId);
@@ -27,5 +25,10 @@ function loadSection(sectionId) {
     .catch((error) => console.error("Error loading section:", error));
 }
 
-// Set the current year in the footer
+// Toggle Mobile Menu
+document.getElementById("menu-btn").addEventListener("click", () => {
+  document.getElementById("mobile-menu").classList.toggle("hidden");
+});
+
+// Set Year in Footer
 document.getElementById("year").textContent = new Date().getFullYear();
